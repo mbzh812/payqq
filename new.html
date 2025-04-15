@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- 关键viewport设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>请用浏览器打开</title>
+    <style>
+        /* 手机专用样式 */
+        body {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            padding: 20px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .guide-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin: 20px auto;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            max-width: 400px;
+        }
+        .warning-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .warning-icon {
+            font-size: 48px;
+            color: #ff4757;
+            margin-bottom: 15px;
+        }
+        h1 {
+            color: #2d3436;
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .steps {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            margin: 20px 0;
+        }
+        .step-item {
+            display: flex;
+            align-items: center;
+            margin: 25px 0;
+            font-size: 16px;
+        }
+        .step-num {
+            width: 30px;
+            height: 30px;
+            background: #4b7bec;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .demo-img {
+            width: 100%;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 1px solid #eee;
+        }
+        .tip-text {
+            color: #a4b0be;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="guide-card">
+            <div class="warning-header">
+                <div class="warning-icon">⚠️</div>
+                <h1>此页面需用浏览器打开</h1>
+            </div>
+            
+            <div class="steps">
+                <!-- 步骤1 -->
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div>
+                        点击右上角 <strong style="color:#4b7bec">···</strong> 或 <strong style="color:#4b7bec">⋮</strong>
+                    </div>
+                </div>
+                
+                <!-- 步骤2 -->
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div>
+                        选择 <strong style="color:#4b7bec">"在浏览器打开"</strong>
+                    </div>
+                </div>
+                
+                <!-- 步骤3 -->
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div>
+                        即可正常访问内容
+                    </div>
+                </div>
+            </div>
+
+            <!-- 示意图（替换此图片链接） -->
+            < img src="https://via.placeholder.com/300x500.png?text=操作示意图" 
+                 class="demo-img"
+                 alt="操作演示">
+            
+            <div class="tip-text">根据上方示意图操作即可完成访问</div>
+        </div>
+    </div>
+
+    <script>
+        // 自动跳转设置
+        (function() {
+            // 检测微信/QQ
+            const isWeChat = /MicroMessenger/i.test(navigator.userAgent);
+            const isQQ = /QQ\//i.test(navigator.userAgent);
+            
+            // 你的目标地址（必须修改）
+            const targetUrl = 'https://pay.qq.com/s/one?openid=DB243BF300688D6505692403EEF09E60&openkey=F2CB32D1FAC5C3B98BEFF44C618FCA00&sessionid=openid&sessiontype=kp_accesstoken&s=1O9ejwjARs0&tx_chan_type=hy&pf=__mds_hystore&tx_chan_type=hy&tx_buyer_id=1199650956194&tx_trace_key=130957465_103&sourceId=1034&hideloading=1&hideShareButton=1&_tab=tab_page_660907'; 
+
+            // 非微信/QQ环境自动跳转
+            if (!isWeChat && !isQQ) {
+                window.location.href = targetUrl;
+            }
+        })();
+    </script>
+</body>
+</html>
